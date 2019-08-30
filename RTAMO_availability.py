@@ -16,7 +16,7 @@ from scipy.optimize import fsolve
 
 #%% User decisions
 A = 0.9 # target availability: proportion of time component can function
-L = 0.0056 # component failure rate from data base
+L = 0.008 # component failure rate from data base
 Tc = 4 / 730 # down time needed for inspection (hours), converted to months
 Tr = 48 / 730 # down time needed for repair (hours), converted to months
 interval_guess = 12 # inspection interval first guess (months)
@@ -42,5 +42,5 @@ plt.xlim([min(x),max(x)])
 plt.ylim([0,1])
 plt.xlabel('Inspection Interval (months)')
 plt.ylabel('Availability')
-plt.hlines(A, min(x), max(x), linestyles='--')
+plt.hlines(A, min(x), max(x), linestyles='-')
 plt.vlines(interval_opt, 0, 1, linestyles='--')
